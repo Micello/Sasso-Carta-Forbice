@@ -31,7 +31,7 @@ function Play(playerSelection, computerSelection){
 }
 
 
-
+/*
 function gioco(){
     for (let i = 0; i < 5; i++){
         const playerSelection = prompt("Sasso, Carta o Forbice?");
@@ -41,3 +41,21 @@ function gioco(){
 }
 
 gioco();
+*/
+
+
+
+
+const buttons = document.querySelectorAll('button');
+
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  
+
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', () => {
+    console.log(Play(button.className,getComputerChoice()));
+    });
+});
