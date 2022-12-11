@@ -1,5 +1,5 @@
 *{
-    border: 1px solid gray;
+  
 }
 
 div.tasti{
@@ -49,7 +49,7 @@ p{
     
 }
 
-#resu,#resm{
+#resu, #resm{
     flex-basis: 150px;
     width: 180px;
     background-color: rgb(31, 107, 237);
