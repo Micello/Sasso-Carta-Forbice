@@ -1,6 +1,10 @@
+mac = document.querySelector('.mac');
+
 function getComputerChoice(){
     const array = ["Sasso", "Carta", "Forbice"];
-    return array[Math.floor(Math.random() * 3)];
+    c = array[Math.floor(Math.random() * 3)];
+    mac.textContent = c;
+    return c; 
 }
 
 function Play(playerSelection, computerSelection){
@@ -55,6 +59,7 @@ let a = document.createElement('p');
 a.textContent = 'Hai...'
 res.appendChild(a);
 
+
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
 
@@ -63,6 +68,7 @@ buttons.forEach((button) => {
     // and for each one we add a 'click' listener
     button.addEventListener('click', () => {
     let risultato = Play(button.className,getComputerChoice());
+    
     const p = document.createElement('p');
     p.textContent = risultato;
     res.replaceChild(p,a);
