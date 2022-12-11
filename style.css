@@ -1,0 +1,61 @@
+*{
+    border: 1px solid gray;
+}
+
+div.tasti{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+h1,h2{
+    text-align: center;
+}
+button{
+    padding: 5%;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+div.tabellone{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+p{
+    all: initial;
+    margin: 5px;
+    
+}
+
+#risultato{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tabellone{
+    display: flex;
+    justify-content: space-around;
+}
+
+.uomo, .macchina{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+}
+
+#resu,#resm{
+    flex-basis: 150px;
+    width: 180px;
+    background-color: rgb(31, 107, 237);
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

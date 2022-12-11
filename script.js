@@ -8,22 +8,22 @@ function Play(playerSelection, computerSelection){
     switch(choice){
         case "SASSO":
             if (computerSelection =="Forbice")
-                {return "Vittoria"}
+                {return "Vinto!!"}
              else if(computerSelection=="Carta") 
-                {return "Sconfitta"}
-             else {return "Pareggio"}
+                {return "Perso..."}
+             else {return "Pareggiato"}
         case "CARTA":
             if (computerSelection =="Forbice")
-                 {return "Sconfitta"}
+                 {return "Perso..."}
              else if(computerSelection=="Carta") 
-                {return "Pareggio"}
-            else {return "Vittoria"}
+                {return "Pareggiato"}
+            else {return "Vinto!!"}
         case "FORBICE":
             if (computerSelection =="Forbice")
-                {return "Pareggio"}
+                {return "Pareggiato"}
             else if(computerSelection=="Carta") 
-                {return "Vittoria"}
-            else {return "Sconfitta"}
+                {return "Vinto!!"}
+            else {return "Perso..."}
     break;
     }
 
@@ -47,7 +47,13 @@ gioco();
 
 
 const buttons = document.querySelectorAll('button');
-
+const res = document.querySelector('#risultato');
+const tab = document.querySelector('.tabellone');
+let puntiMacchina = 0;
+let puntiUmano = 0;
+let a = document.createElement('p');
+a.textContent = 'Hai...'
+res.appendChild(a);
 
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
@@ -56,6 +62,19 @@ buttons.forEach((button) => {
 
     // and for each one we add a 'click' listener
     button.addEventListener('click', () => {
-    console.log(Play(button.className,getComputerChoice()));
+    let risultato = Play(button.className,getComputerChoice());
+    const p = document.createElement('p');
+    p.textContent = risultato;
+    res.replaceChild(p,a);
+    a=p;
+    if (risultato == 'Vinto!!'){
+        puntiUmano++;
+        document.getElementById('resu').textContent = puntiUmano;
+    }else{
+        if (risultato == 'Perso...'){
+            puntiMacchina++
+            document.getElementById('resm').textContent = puntiMacchina;
+        }
+    }
     });
 });
